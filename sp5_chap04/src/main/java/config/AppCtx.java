@@ -2,49 +2,26 @@ package config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import spring.*;
 
 @Configuration
+@ComponentScan(basePackages = {"spring"})
 public class AppCtx {
 
-    @Bean
-    public MemberDao memberDao() {
-        return new MemberDao();
-    }
 
-    @Bean
-    public MemberRegisterService memberRegSvc() {
-        return new MemberRegisterService(memberDao());
-    }
-
-    @Bean
-    public ChangePasswordService changePwdSvc() {
-        return new ChangePasswordService();
-    }
-
-    @Bean
-    public MemberPrinter memberPrinter() {
-        return new MemberPrinter();
-    }
     @Bean
     @Qualifier("printer")
     public MemberPrinter memberPrinter1() {
         return new MemberPrinter();
     }
     @Bean
+    @Qualifier("summaryPrinter")
     public MemberSummaryPrinter memberPrinter2() {
         return new MemberSummaryPrinter();
     }
 
-    @Bean
-    public MemberListPrinter listPrinter() {
-        return new MemberListPrinter(memberDao(), memberPrinter());
-    }
-    @Bean
-    public MemberInfoPrinter infoPrinter() {
-        return new MemberInfoPrinter();
-    }
     @Bean
     public VersionPrinter versionPrinter() {
         VersionPrinter versionPrinter = new VersionPrinter();
