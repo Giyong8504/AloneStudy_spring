@@ -28,6 +28,7 @@ public class AppCtx {
         return new MemberPrinter();
     }
     @Bean
+    @Qualifier("printer")
     public MemberPrinter memberPrinter1() {
         return new MemberPrinter();
     }
