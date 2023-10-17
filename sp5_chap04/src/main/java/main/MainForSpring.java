@@ -1,7 +1,6 @@
 package main;
 
-import assembler.Assembler;
-import config.AppConfImport;
+import config.AppCtx;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import spring.*;
@@ -15,7 +14,7 @@ public class MainForSpring {
     private static ApplicationContext ctx = null;
 
     public static void main(String[] args) throws IOException {
-        ctx = new AnnotationConfigApplicationContext(AppConfImport.class);
+        ctx = new AnnotationConfigApplicationContext(AppCtx.class);
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
@@ -45,7 +44,6 @@ public class MainForSpring {
         }
     }
 
-    private static Assembler assembler = new Assembler();
 
     private static void processNewCommand(String[] arg) {
         if (arg.length != 5) {

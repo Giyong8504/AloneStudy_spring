@@ -1,5 +1,6 @@
 package config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import spring.*;
@@ -19,13 +20,20 @@ public class AppCtx {
 
     @Bean
     public ChangePasswordService changePwdSvc() {
-        ChangePasswordService pwdSvc = new ChangePasswordService();
-        return pwdSvc;
+        return new ChangePasswordService();
     }
 
     @Bean
     public MemberPrinter memberPrinter() {
         return new MemberPrinter();
+    }
+    @Bean
+    public MemberPrinter memberPrinter1() {
+        return new MemberPrinter();
+    }
+    @Bean
+    public MemberSummaryPrinter memberPrinter2() {
+        return new MemberSummaryPrinter();
     }
 
     @Bean
@@ -34,15 +42,7 @@ public class AppCtx {
     }
     @Bean
     public MemberInfoPrinter infoPrinter() {
-        MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-        /**
-         * 세터 메서드를 사용해서 의존 주입을 하지 않아도
-         * 스프링 컨테이너가 @Autowired를 붙인 필드에
-         * 자동으로 해당 타입의 빈 객체를 주입
-         */
-        // infoPrinter.setMemberDao(memberDao());
-        // infoPrinter.setPrinter(memberPrinter());
-        return infoPrinter;
+        return new MemberInfoPrinter();
     }
     @Bean
     public VersionPrinter versionPrinter() {
