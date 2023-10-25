@@ -11,6 +11,7 @@ public class Client implements InitializingBean, DisposableBean {
         this.host = host;
     }
 
+    @Override
     public void destroy() throws Exception {
         System.out.println("Client.afterPropertiesSet() 실행");
     }
@@ -18,6 +19,7 @@ public class Client implements InitializingBean, DisposableBean {
     public void send() {
         System.out.println("Client.send() to" + host);
     }
+    @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("Client.destroy() 실행");
     }
