@@ -16,6 +16,11 @@ public class MemberDao {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    public int count() {
+        Integer count = jdbcTemplate.queryForObject(
+                "SELECT COUNT(*) FROM member", Integer.class);
+        return count;
+    }
     public Member selectByEmail(String email) {
         List<Member> results = jdbcTemplate.query(
                 "SELECT * FROM member WHERE email = ?",
@@ -59,4 +64,5 @@ public class MemberDao {
                     }
                 });
         return results;
+    }
 }
