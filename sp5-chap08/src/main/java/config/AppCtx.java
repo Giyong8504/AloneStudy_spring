@@ -3,9 +3,13 @@ package config;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import spring.MemberDao;
 
 @Configuration
+@EnableTransactionManagement
 public class AppCtx {
     @Bean
     public MemberDao memberDao() {
@@ -25,5 +29,11 @@ public class AppCtx {
         ds.setMinEvictableIdleTimeMillis(1000 * 60 * 30); // 최소 유휴 시간 3분
         ds.setTimeBetweenEvictionRunsMillis(1000 * 10); // 10초 주기
         return ds;
+    }
+
+    public PlatformTransactionManager transactionManager() {
+        DataSourceTransactionManager tm = new DataSourceTransactionManager(());
+        tm.setDataSource(dataSource());
+        return tm;
     }
 }
