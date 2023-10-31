@@ -2,10 +2,10 @@ package spring;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -46,8 +46,21 @@ public class MemberDao {
     }
 
     public void update(Member member) {
-
-    }
+        jdbcTemplate.update(new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection conn) {
+                // 파라미터로 전달받은 Connection을 이용해서 PreparedStatement 생성
+                PreparedStatement pstmt = conn.prepareStatement(
+                        "INSERT INTO MEMBER(email, password, name, regDate) values (?, ?, ?, ?)");
+                // 인덱스 파라미터 값 설정
+                pstmt.setString(1, member.getEmail());
+                pstmt.setString(2, member.getPassword());
+                pstmt.setString(3, member.getName());
+                pstmt.setTimestamp(4, Timestamp.valueOf(member.getRegisterDateTime()));
+                // 생성한 PreparedStatement 객체 리턴
+                return pstmt;
+            }
+        });
 
     public List<Member> selectAll() {
         List<Member> results = jdbcTemplate.query("SELECT * FROM member",
