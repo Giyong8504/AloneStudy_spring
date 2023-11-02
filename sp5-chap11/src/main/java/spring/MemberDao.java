@@ -1,61 +1,65 @@
 package spring;
 
-import org.apache.tomcat.jdbc.pool.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.List;
+
+import javax.sql.DataSource;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
-import java.sql.*;
-import java.util.List;
-
 public class MemberDao {
+
     private JdbcTemplate jdbcTemplate;
 
     public MemberDao(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    public int count() {
-        Integer count = jdbcTemplate.queryForObject(
-                "SELECT COUNT(*) FROM member", Integer.class);
-        return count;
-    }
-
     public Member selectByEmail(String email) {
         List<Member> results = jdbcTemplate.query(
-                "SELECT * FROM member WHERE email = ?",
+                "select * from MEMBER where EMAIL = ?",
                 new RowMapper<Member>() {
                     @Override
                     public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Member member = new Member(
-                                rs.getString("email"),
-                                rs.getString("password"),
-                                rs.getString("name"),
-                                rs.getTimestamp("regDate").toLocalDateTime());
-                        member.setId(rs.getLong("id"));
+                                rs.getString("EMAIL"),
+                                rs.getString("PASSWORD"),
+                                rs.getString("NAME"),
+                                rs.getTimestamp("REGDATE").toLocalDateTime());
+                        member.setId(rs.getLong("ID"));
                         return member;
                     }
-                },
-                email);
+                }, email);
 
         return results.isEmpty() ? null : results.get(0);
     }
 
-    public void insert(final Member member) {
+    public void insert(Member member) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
-            public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+            public PreparedStatement createPreparedStatement(Connection con)
+                    throws SQLException {
+                // 파라미터로 전달받은 Connection을 이용해서 PreparedStatement 생성
                 PreparedStatement pstmt = con.prepareStatement(
-                        "INSERT INTE member (EMAIL, PASSWORD, NAME, REGDATE)" +
+                        "insert into MEMBER (EMAIL, PASSWORD, NAME, REGDATE) " +
                                 "values (?, ?, ?, ?)",
-                        new String[]{"ID"});
+                        new String[] { "ID" });
+                // 인덱스 파라미터 값 설정
                 pstmt.setString(1, member.getEmail());
                 pstmt.setString(2, member.getPassword());
                 pstmt.setString(3, member.getName());
-                pstmt.setTimestamp(4, Timestamp.valueOf(member.getRegisterDateTime()));
+                pstmt.setTimestamp(4,
+                        Timestamp.valueOf(member.getRegisterDateTime()));
+                // 생성한 PreparedStatement 객체 리턴
                 return pstmt;
             }
         }, keyHolder);
@@ -64,37 +68,29 @@ public class MemberDao {
     }
 
     public void update(Member member) {
-        jdbcTemplate.update(new PreparedStatementCreator() {
-            @Override
-            public PreparedStatement createPreparedStatement(Connection conn) {
-                // 파라미터로 전달받은 Connection을 이용해서 PreparedStatement 생성
-                PreparedStatement pstmt = conn.prepareStatement(
-                        "INSERT INTO member(email, password, name, regDate) values (?, ?, ?, ?)");
-                // 인덱스 파라미터 값 설정
-                pstmt.setString(1, member.getEmail());
-                pstmt.setString(2, member.getPassword());
-                pstmt.setString(3, member.getName());
-                pstmt.setTimestamp(4, Timestamp.valueOf(member.getRegisterDateTime()));
-                // 생성한 PreparedStatement 객체 리턴
-                return pstmt;
-            }
-        });
-
-        public List<Member> selectAll () {
-            List<Member> results = jdbcTemplate.query("SELECT * FROM member",
-                    new RowMapper<Member>() {
-                        @Override
-                        public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
-                            Member member = new Member(
-                                    rs.getString("email"),
-                                    rs.getString("password"),
-                                    rs.getString("name"),
-                                    rs.getTimestamp("regDate").toLocalDateTime());
-                            member.setId(rs.getLong("id"));
-                            return member;
-                        }
-                    });
-            return results;
-        }
+        jdbcTemplate.update(
+                "update MEMBER set NAME = ?, PASSWORD = ? where EMAIL = ?",
+                member.getName(), member.getPassword(), member.getEmail());
     }
+
+    public List<Member> selectAll() {
+        List<Member> results = jdbcTemplate.query("select * from MEMBER",
+                (ResultSet rs, int rowNum) -> {
+                    Member member = new Member(
+                            rs.getString("EMAIL"),
+                            rs.getString("PASSWORD"),
+                            rs.getString("NAME"),
+                            rs.getTimestamp("REGDATE").toLocalDateTime());
+                    member.setId(rs.getLong("ID"));
+                    return member;
+                });
+        return results;
+    }
+
+    public int count() {
+        Integer count = jdbcTemplate.queryForObject(
+                "select count(*) from MEMBER", Integer.class);
+        return count;
+    }
+
 }

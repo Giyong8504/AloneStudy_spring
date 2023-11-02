@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 import spring.ChangePasswordService;
 import spring.MemberDao;
 import spring.MemberRegisterService;
@@ -17,7 +18,7 @@ public class MemberConfig {
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         DataSource ds = new DataSource();
-        ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost/spring5fs?characterEncoding=utf8");
         ds.setUsername("spring5");
         ds.setPassword("spring5");
@@ -28,6 +29,7 @@ public class MemberConfig {
         ds.setTimeBetweenEvictionRunsMillis(10 * 1000);
         return ds;
     }
+
     @Bean
     public PlatformTransactionManager transactionManager() {
         DataSourceTransactionManager tm = new DataSourceTransactionManager();

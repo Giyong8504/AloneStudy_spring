@@ -1,10 +1,7 @@
 package spring;
 
-import lombok.Data;
-
 import java.time.LocalDateTime;
 
-@Data
 public class Member {
 
     private Long id;
