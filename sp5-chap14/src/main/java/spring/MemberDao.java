@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -23,18 +24,37 @@ public class MemberDao {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    public Member selectByEmail(String email) {
+    public List<Member> selectByRegdate(LocalDateTime from, LocalDateTime to) {
         List<Member> results = jdbcTemplate.query(
-                "select * from MEMBER where EMAIL = ?",
+                "SELECT * FROM member WHERE regDate BETWEEN ? and ? ORDER BY REGDATE DESC",
                 new RowMapper<Member>() {
                     @Override
                     public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
                         Member member = new Member(
-                                rs.getString("EMAIL"),
-                                rs.getString("PASSWORD"),
-                                rs.getString("NAME"),
-                                rs.getTimestamp("REGDATE").toLocalDateTime());
-                        member.setId(rs.getLong("ID"));
+                                rs.getString("email"),
+                                rs.getString("password"),
+                                rs.getString("name"),
+                                rs.getTimestamp("regDate").toLocalDateTime());
+                        member.setId(rs.getLong("id"));
+                        return member;
+                    }
+                },
+                from, to);
+        return results;
+    }
+
+    public Member selectByEmail(String email) {
+        List<Member> results = jdbcTemplate.query(
+                "SELECT * FROM member WHERE email = ?",
+                new RowMapper<Member>() {
+                    @Override
+                    public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Member member = new Member(
+                                rs.getString("email"),
+                                rs.getString("password"),
+                                rs.getString("name"),
+                                rs.getTimestamp("regdate").toLocalDateTime());
+                        member.setId(rs.getLong("id"));
                         return member;
                     }
                 }, email);
@@ -50,9 +70,9 @@ public class MemberDao {
                     throws SQLException {
                 // 파라미터로 전달받은 Connection을 이용해서 PreparedStatement 생성
                 PreparedStatement pstmt = con.prepareStatement(
-                        "insert into MEMBER (EMAIL, PASSWORD, NAME, REGDATE) " +
-                                "values (?, ?, ?, ?)",
-                        new String[] { "ID" });
+                        "INSERT INTO member (email, password, name, regdate) " +
+                                "VALUE (?, ?, ?, ?)",
+                        new String[] { "id" });
                 // 인덱스 파라미터 값 설정
                 pstmt.setString(1, member.getEmail());
                 pstmt.setString(2, member.getPassword());
@@ -69,19 +89,19 @@ public class MemberDao {
 
     public void update(Member member) {
         jdbcTemplate.update(
-                "update MEMBER set NAME = ?, PASSWORD = ? where EMAIL = ?",
+                "UPDATE member SET name = ?, password = ? WHERE eamil = ?",
                 member.getName(), member.getPassword(), member.getEmail());
     }
 
     public List<Member> selectAll() {
-        List<Member> results = jdbcTemplate.query("select * from MEMBER",
+        List<Member> results = jdbcTemplate.query("SELECT * FROM member",
                 (ResultSet rs, int rowNum) -> {
                     Member member = new Member(
-                            rs.getString("EMAIL"),
-                            rs.getString("PASSWORD"),
-                            rs.getString("NAME"),
-                            rs.getTimestamp("REGDATE").toLocalDateTime());
-                    member.setId(rs.getLong("ID"));
+                            rs.getString("email"),
+                            rs.getString("password"),
+                            rs.getString("name"),
+                            rs.getTimestamp("regdate").toLocalDateTime());
+                    member.setId(rs.getLong("id"));
                     return member;
                 });
         return results;
@@ -89,8 +109,7 @@ public class MemberDao {
 
     public int count() {
         Integer count = jdbcTemplate.queryForObject(
-                "select count(*) from MEMBER", Integer.class);
+                "SELECT COUNT(*) FROM member", Integer.class);
         return count;
     }
-
 }
