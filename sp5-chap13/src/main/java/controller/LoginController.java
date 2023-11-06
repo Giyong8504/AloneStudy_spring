@@ -1,5 +1,6 @@
 package controller;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ public class LoginController {
     }
 
     @PostMapping
-    public String submit(LoginCommand loginCommand, Errors errors) {
+    public String submit(LoginCommand loginCommand, Errors errors, HttpSession session) {
         new LoginCommandValidator().validate(loginCommand, errors);
         if (errors.hasErrors()) {
             return "login/loginForm";
@@ -33,6 +34,8 @@ public class LoginController {
 
         try {
             AuthInfo authInfo = authService.authenticate(loginCommand.getEmail(), loginCommand.getPassword());
+
+            session.setAttribute("authInfo", authInfo);
 
             // TODO 세션에 authInfo 저장해야 함
             return "login/loginSuccess";
