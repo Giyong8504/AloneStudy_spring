@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3316fa2-a3c1-455e-bd08-75f16d29cc18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ListCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MemberListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/formatDateTime.tag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/member/memberList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/CommonExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MemberDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/member/invalidId.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/member/memberDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MemberListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MemberListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/MemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/message/label.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/message/label.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/member/memberList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/member/memberList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +42,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/kky51/study_spring/AloneStudy_spring/sp5-chap13",
-    "settings.editor.selected.configurable": "configurable.group.appearance"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/KGY/study_java/project4/teamProject_Book",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
