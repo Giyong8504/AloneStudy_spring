@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import spring.AuthInfo;
 import spring.ChangePasswordService;
@@ -29,6 +30,7 @@ public class ChangePwdController {
         return "edit/changePwdForm";
     }
 
+    @PostMapping
     public String submit(@ModelAttribute("command") ChangePwdCommand pwdCmd, Errors errors, HttpSession session) {
         new ChangePwdCommandValidator().validate(pwdCmd, errors);
         if (errors.hasErrors()) {
@@ -36,6 +38,7 @@ public class ChangePwdController {
         }
         AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
         try {
+            // 컨트롤러는 로직실행을 서비스에 위임한다.
             changePasswordService.changePassword(
                     authInfo.getEmail(),
                     pwdCmd.getCurrentPassword(),
