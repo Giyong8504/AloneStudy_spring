@@ -57,7 +57,7 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json()
-                .featuresToDisable(SerializationFeature.WRITE_DURATIONS_AS_TIMESTAMPS).build();
+                .simpleDateFormat("yyyyMMddHHmmss").build(); // Date를 위한 변환 패턴
         converters.add(0, new MappingJackson2HttpMessageConverter(objectMapper));
     }
 }
