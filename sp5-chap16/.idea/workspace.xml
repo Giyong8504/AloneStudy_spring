@@ -5,12 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723fb2cf-d588-4b24-98d1-0c4381bad38f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RestMemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/commons/CommonExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/config/ControllerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/config/MemberConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/config/MvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/ChangePwdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/ChangePwdCommandValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/ChangePwdController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/ListCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/LoginCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/LoginCommandValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/LogoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/MemberDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/MemberListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/RegisterRequestValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/controller/RestMemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/interceptor/AuthCheckInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/AuthInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/ChangePasswordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/DuplicateMemberException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/MemberDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/MemberNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/MemberRegisterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/spring/WrongIdPasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/survey/AnsweredData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/survey/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/survey/Respondent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/java/survey/SurveyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sp5-chap17/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sp5-chap14/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp5-chap14/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/Member.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +74,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/KGY/study_java/study_spring/AloneStudy_spring/sp5-chap16/src",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
+    "last_opened_file_path": "C:/Users/KGY/study_java/study_spring/AloneStudy_spring/sp5-chap16",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -54,9 +93,6 @@
       <option name="catalinaBase" value="C:\Users\KGY\.SmartTomcat\sp5-chap16\sp5-chap16" />
       <option name="contextPath" value="/sp5-chap16" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>

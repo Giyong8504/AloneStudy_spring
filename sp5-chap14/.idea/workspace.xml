@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3316fa2-a3c1-455e-bd08-75f16d29cc18" name="Changes" comment="" />
+    <list default="true" id="a3316fa2-a3c1-455e-bd08-75f16d29cc18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../sp5-chap16/src/main/java/controller/RestMemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp5-chap16/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp5-chap16/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp5-chap16/src/main/java/config/ControllerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp5-chap16/src/main/java/config/ControllerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp5-chap16/src/main/java/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp5-chap16/src/main/java/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sp5-chap16/src/main/java/spring/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sp5-chap16/src/main/java/spring/Member.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/KGY/study_java/demo",
+    "last_opened_file_path": "C:/Users/KGY/study_java/study_spring/AloneStudy_spring/sp5-chap14",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
