@@ -13,7 +13,6 @@ public class Member {
     private String password;
     private String name;
 
-    @JsonFormat(pattern = "yyyyMMddHHmmss")
     private LocalDateTime registerDateTime;
 
     public Member(String email, String password,

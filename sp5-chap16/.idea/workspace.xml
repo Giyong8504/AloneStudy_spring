@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="723fb2cf-d588-4b24-98d1-0c4381bad38f" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../sp5-chap17/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../sp5-chap17/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../sp5-chap17/.idea/encodings.xml" afterDir="false" />
@@ -50,6 +51,14 @@
       <change beforePath="$PROJECT_DIR$/../sp5-chap14/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sp5-chap14/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ApiExceptionAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RestMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RestMemberController.java" afterDir="false" />
+>>>>>>> e439f664d4f3648859fc0addf2fa647e406294fe
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +83,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/Users/KGY/study_java/study_spring/AloneStudy_spring/sp5-chap16",
+=======
+    "last_opened_file_path": "C:/Users/김기용/study_Spring/AloneStudy_spring/sp5-chap16",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+>>>>>>> e439f664d4f3648859fc0addf2fa647e406294fe
     "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
@@ -90,19 +106,17 @@
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="catalinaBase" value="C:\Users\KGY\.SmartTomcat\sp5-chap16\sp5-chap16" />
       <option name="contextPath" value="/sp5-chap16" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/10.1.11" />
-          <option name="path" value="$PROJECT_DIR$/../../../자바/apache-tomcat-10.1.11" />
+          <option name="path" value="$USER_HOME$/자바/apache-tomcat-10.1.11" />
           <option name="version" value="10.1.11.0" />
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="sp5-chap16" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
